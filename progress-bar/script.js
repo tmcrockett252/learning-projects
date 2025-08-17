@@ -7,4 +7,10 @@ function increaseProgress() {
     }
 }
 
+function resetProgress() {
+    if (progress === 100) {
+        progress = 0;
+        document.getElementById('progressBar').style.width = '0%';
+    }
+}
 
