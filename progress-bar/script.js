@@ -1,10 +1,14 @@
 let progress = 0;
 
-function increaseProgress() {
-    if (progress < 100) {
-        progress += 10;
-        document.getElementById('progressBar').style.width = progress + '%';
-    }
+function increaseProgressSlowly() {
+    const interval = setInterval(() => {
+        if (progress < 100) {
+            progress += 2; // Increase by 2% each time
+            document.getElementById('progressBar').style.width = progress + '%';
+        } else {
+            clearInterval(interval); // Stop when it reaches 100%
+        }
+    }, 100); // Update every 100 milliseconds
 }
 
 function resetProgress() {
