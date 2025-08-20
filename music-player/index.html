@@ -20,9 +20,76 @@
           <div class="circle">
             <i class="fa-solid fa-bars"></i>
           </div>
-          <img src="media/" class=""song-cover" />
         </nav>
+        <img src="media/Cassette_Player.jpeg" class="song-cover" />
+        <h1>POOKIE'S REQUIEM</h1>
+        <p>SAILORR Ft. Summer Walker</p>
+
+        <audio id="song">
+          <source src="media/POOKIE'S REQUIEM.mp3" type="audio/mpeg" />
+        </audio>
+        <input type="range" value="0" id="progress" />
+        <div class="time">
+          <span id="current">0:00</span>
+          <span id="duration">3:38</span>
+        </div>
+
+        <div class="controls">
+          <div><i class="fa-solid fa-backward"></i></div>
+          <div onclick="playPause()">
+            <i class="fa-solid fa-play" id="ctrlIcon"></i>
+          </div>
+          <div><i class="fa-solid fa-forward"></i></div>
+        </div>
       </div>
     </div>
+
+    <script>
+      let progress = document.getElementById("progress");
+      let song = document.getElementById("song");
+      let ctrlIcon = document.getElementById("ctrlIcon");
+
+      song.onloadedmetadata = function () {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+
+        // Format and display the actual duration
+        let minutes = Math.floor(song.duration / 60);
+        let seconds = Math.floor(song.duration % 60);
+        if (seconds < 10) seconds = "0" + seconds;
+        document.getElementById("duration").textContent =
+          minutes + ":" + seconds;
+      };
+
+      song.ontimeupdate = function () {
+        progress.value = song.currentTime;
+
+        // Format and display the current time
+        let currentMinutes = Math.floor(song.currentTime / 60);
+        let currentSeconds = Math.floor(song.currentTime % 60);
+        if (currentSeconds < 10) currentSeconds = "0" + currentSeconds;
+        document.getElementById("current").textContent =
+          currentMinutes + ":" + currentSeconds;
+      };
+
+      function playPause() {
+        if (ctrlIcon.classList.contains("fa-pause")) {
+          song.pause();
+          ctrlIcon.classList.remove("fa-pause");
+          ctrlIcon.classList.add("fa-play");
+        } else {
+          song.play();
+          ctrlIcon.classList.add("fa-pause");
+          ctrlIcon.classList.remove("fa-play");
+        }
+      }
+
+      progress.onchange = function () {
+        song.play();
+        song.currentTime = progress.value;
+        ctrlIcon.classList.add("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+      };
+    </script>
   </body>
 </html>
