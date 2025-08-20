@@ -2,6 +2,8 @@
 
 A modern, responsive web-based music player built with HTML, CSS, and JavaScript. This project demonstrates audio controls, time tracking, and interactive user interface elements.
 
+**Credit & YouTube Tutorial followed by: GreatStack!**
+
 ## Features
 
 ### Core Functionality
