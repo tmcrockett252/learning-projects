@@ -41,6 +41,7 @@
           </div>
           <div><i class="fa-solid fa-forward"></i></div>
         </div>
+        <div><input type="range" class="volume" value="0" id="volume" /></div>
       </div>
     </div>
 
@@ -48,10 +49,18 @@
       let progress = document.getElementById("progress");
       let song = document.getElementById("song");
       let ctrlIcon = document.getElementById("ctrlIcon");
+      let volume = document.getElementById("volume");
 
       song.onloadedmetadata = function () {
         progress.max = song.duration;
         progress.value = song.currentTime;
+
+        // Initialize volume
+        volume.max = 1;
+        volume.min = 0;
+        volume.step = 0.1;
+        volume.value = 0.3; // Set default volume to 30%
+        song.volume = volume.value;
 
         // Format and display the actual duration
         let minutes = Math.floor(song.duration / 60);
@@ -84,11 +93,20 @@
         }
       }
 
+      progress.oninput = function () {
+        song.currentTime = progress.value;
+      };
+
       progress.onchange = function () {
         song.play();
         song.currentTime = progress.value;
         ctrlIcon.classList.add("fa-pause");
         ctrlIcon.classList.remove("fa-play");
+      };
+
+      // Volume control
+      volume.oninput = function () {
+        song.volume = volume.value;
       };
     </script>
   </body>

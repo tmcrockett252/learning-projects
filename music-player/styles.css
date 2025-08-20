@@ -126,3 +126,16 @@ nav .circle {
   color: #fff;
   transform: scale(1.5);
 }
+
+.volume {
+  -webkit-appearance: none;
+  width: 80px;
+  height: 6px;
+  background: #f53192;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  left: 160px;
+  top: -60px;
+  transform: rotate(-90deg);
+}
