@@ -46,11 +46,13 @@
     </div>
 
     <script>
+      // Gets Elements by their IDs
       let progress = document.getElementById("progress");
       let song = document.getElementById("song");
       let ctrlIcon = document.getElementById("ctrlIcon");
       let volume = document.getElementById("volume");
 
+      // When the song's metadata is loaded
       song.onloadedmetadata = function () {
         progress.max = song.duration;
         progress.value = song.currentTime;
@@ -70,6 +72,7 @@
           minutes + ":" + seconds;
       };
 
+      // Update progress as the song plays
       song.ontimeupdate = function () {
         progress.value = song.currentTime;
 
@@ -81,6 +84,7 @@
           currentMinutes + ":" + currentSeconds;
       };
 
+      // Play/Pause functionality
       function playPause() {
         if (ctrlIcon.classList.contains("fa-pause")) {
           song.pause();
@@ -93,6 +97,7 @@
         }
       }
 
+      // Seek functionality
       progress.oninput = function () {
         song.currentTime = progress.value;
       };
