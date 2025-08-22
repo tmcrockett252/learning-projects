@@ -1,6 +1,50 @@
-.divider {
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    margin: 20px 0;
+* {
+  --background-color: #f6c6db;
+  border-radius: 80px;
+  margin: 0;
+  padding: 0;
+  font-family: "Pixelify Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Icon classes */
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-fish {
+  background-image: url("./icons/Pink_fish_icon.ico");
+}
+
+.icon-cherry-blossom {
+  background-image: url("./icons/Cherry_blossom_icon.ico");
+}
+
+.icon-file {
+  background-image: url("./icons/Pink_file.ico");
+}
+
+.icon-jellyfish {
+  background-image: url("./icons/Pink_jellyfish.ico");
+}
+
+.icon-trashcan {
+  background-image: url("./icons/Pink_trashcan.ico");
+}
+
+.container {
+  background: var(--background-color);
+  width: 100vh;
+  height: 100%;
+  padding: 25px 35px;
+  border-radius: 20px;
+}
+
+.top-background-clouds {
+  position: ;
 }
