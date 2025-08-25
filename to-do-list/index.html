@@ -5,46 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-
     <!-- To-Do List HeaderSection -->
     <div class="container">
-      <div class="top-background-clouds"><img src="./icons/Pink_cloud_icon.png" alt="Pink Pixel Cloud" /></div>
+      <!-- Top Background Clouds -->
+      <div class="top-background-clouds">
+        <img src="./icons/Pink_cloud_icon.png" alt="Pink Pixel Cloud" />
+      </div>
+
       <div class="to-do-list">
-        <h1 class="title">To-Do List</h1><i class="icon icon-fish" title="To-Do List icon"></i>
+        <h1 class="title">To-Do List</h1>
+        <i class="icon icon-fish" title="To-Do List icon"></i>
       </div>
 
-      <!-- Calendar Section -->
-      <div class="calendar-section">
-        <h2 class="calendar-title">Calendar</h2>
-        <p class="calendar-month">August</p>
-        <p class="calendar-day">22nd</p>
-        <p class="calendar-day">Friday</p>
-      </div>
+      <!-- Main Content Layout -->
+      <div class="main-content">
+        <div class="left-side">
+          <!-- Calendar Section -->
+          <div class="calendar-section">
+            <h2 class="calendar-title">Calendar</h2>
+            <p class="calendar-month">August</p>
+            <p class="calendar-day">23rd</p>
+            <p class="calendar-day">Friday</p>
+          </div>
+        </div>
 
-      <!-- Progress Bar -->
-      <div class="progress-section">
-        <h2 class="progress-title">Progress</h2>
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
-      </div>
+        <div class="right-side">
+          <!-- Progress Bar -->
+          <div class="progress-section">
+            <h2 class="progress-title">Progress:</h2>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
 
-      <!-- Cherry Blossom Image -->
-       <div class="cherry-blossom-image">
-         <i class="icon icon-cherry-blossom" title="Cherry Blossom"></i>
-       </div>
+          <!-- Cherry Blossom Image -->
+          <div class="cherry-blossom-image">
+            <i class="icon icon-cherry-blossom" title="Cherry Blossom"></i>
+          </div>
+        </div>
+      </div>
 
       <!-- Input Task Section -->
-       <div class="input-task-section">
+      <div class="input-task-section">
         <div class="input-task-bar">
-          <input type="text" class="input-task" placeholder="Add a new task..." />
-          <button class="add-task-button"><i class="icon icon-file" title="Add Task"></i></button>
+          <input
+            type="text"
+            class="input-task"
+            placeholder="Add a new task..."
+          />
+          <button class="add-task-button">
+            <i class="icon icon-file" title="Add Task"></i>
+          </button>
         </div>
-       </div>
+      </div>
 
       <!-- Task List Section -->
       <div class="task-list-section">
@@ -52,24 +73,30 @@
         <div class="task-bar">
           <i class="icon icon-jellyfish" title="bullet point"></i>
           <p class="task-text"></p>
-          <button class="delete-task-button"><i class="icon icon-trashcan" title="Delete Task"></i></button>
+          <button class="delete-task-button">
+            <i class="icon icon-trashcan" title="Delete Task"></i>
+          </button>
         </div>
         <div class="task-bar">
           <i class="icon icon-jellyfish" title="bullet point"></i>
           <p class="task-text"></p>
-          <button class="delete-task-button"><i class="icon icon-trashcan" title="Delete Task"></i></button>
+          <button class="delete-task-button">
+            <i class="icon icon-trashcan" title="Delete Task"></i>
+          </button>
         </div>
         <div class="task-bar">
           <i class="icon icon-jellyfish" title="bullet point"></i>
           <p class="task-text"></p>
-          <button class="delete-task-button"><i class="icon icon-trashcan" title="Delete Task"></i></button>
+          <button class="delete-task-button">
+            <i class="icon icon-trashcan" title="Delete Task"></i>
+          </button>
         </div>
+      </div>
 
-        <!-- Bottom Clouds -->
-        <div class="bottom-background-clouds">
-          <img src="./icons/Pink_cloud_icon.png" alt="Pink Pixel Cloud" />
-        </div>
-
+      <!-- Bottom Background Clouds -->
+      <div class="bottom-background-clouds">
+        <img src="./icons/Pink_cloud_icon.png" alt="Pink Pixel Cloud" />
+      </div>
     </div>
   </body>
 </html>
