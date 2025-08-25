@@ -1,12 +1,12 @@
 # Pink Pixel To-Do List
 
-A beautifully designed, pixel-art themed to-do list application with a soft pink aesthetic and custom iconography. The complete design was created from scratch in **Figma**, including the layout, color scheme, and custom pixel art icons.
+A beautifully designed, pixel-art themed to-do list application with a soft pink aesthetic and custom iconography. The complete design was created from scratch in **Figma**, including the layout and color scheme. **DISCLAIMER: I DO NOT OWN THESE PIXEL ART ICONS!**
 
 ## 🎨 Design Overview
 
 This to-do list features a unique pixel art design with:
 
-- **Color Scheme**: Soft pink gradients (#f6c6db, #e8b4cb, #f8a2c4)
+- **Color Scheme**: Soft pink gradients
 - **Typography**: "Pixelify Sans" font for authentic pixel feel
 - **Custom Icons**: Hand-crafted pink pixel art icons designed in Figma
 - **Layout**: Card-based design with decorative cloud backgrounds
@@ -18,7 +18,7 @@ This to-do list features a unique pixel art design with:
 to-do-list/
 ├── index.html          # Main HTML structure
 ├── styles.css          # Complete styling and layout
-├── icons/              # Custom pixel art icon assets (designed in Figma)
+├── icons/            
 │   ├── Pink_fish_icon.ico
 │   ├── Cherry_blossom_icon.ico
 │   ├── Pink_file.ico
@@ -166,13 +166,8 @@ This static implementation provides the foundation for:
 - Task completion states
 - Animation and transition effects
 
-## 📱 Browser Compatibility
 
-- Modern browsers supporting CSS Grid and Flexbox
-- Google Fonts integration
-- CSS custom properties support
-- Icon file format compatibility (.ico, .png)
 
 ## 🎨 Design Credits
 
-All visual design, including layout, color scheme, typography choices, and custom pixel art icons, were created from scratch in Figma as part of this project's complete design-to-
+All custom pixel art icons were found on Pinterest as part of this project!
