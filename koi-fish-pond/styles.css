@@ -1,0 +1,61 @@
+* {
+  font-family: "Pixelify Sans", sans-serif;
+  background: linear-gradient(-90deg, #de676b 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+/* Pond Container */ 
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #a3d5ff, #4da6ff);
+  overflow: hidden;
+}
+
+.pond {
+  position: relative; 
+  width: 90vw;
+  height: 70vh;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #74c0fc, #1e6091);
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4) inset;
+}
+
+/* Koi Fish Styles */
+.koi {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background: orange;
+  border-radius: 50% 50% 50% 50%;
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%);
+  animation: swim 12s linear infinite;
+}
+
+    /* 🎨 Koi details */
+.koi::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background: orange;
+  border-radius: 50%;
+}
+
+.koi::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+}
