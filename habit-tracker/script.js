@@ -64,12 +64,79 @@ for(let i = 0; i < days.length; i++) {
             day[j].innerHTML = dayCount + 1;
             day[j].setAttribute("id", "day" + (dayCount + 1));
             dayCount++;
-            } else {
-                day[j].innerHTML = "";
-                day[j].setAttribute("style", "background-color:white");
-            }
+        } else {
+            day[j].innerHTML = "";
+            day[j].setAttribute("style", "background-color:white");
+        }
     }
     rowCount++;
 }
 
+let completed = new Array(31);
+for(let i = 0; i < dayCount; i++) {
+    let tempString = "" + (currentMonth + 1) + "-" + (i + 1) + currentYear;
+    console.log("storing date: " + tempString);
+    let tempDay = localStorage.getItem(tempString);
+    console.log(tempDay);
 
+    if(tempDay == null || tempDay == "false"){
+        localStorage.setItem(tempString, "false");
+    }  else if(tempDay == "true") {
+        daysCompleted++;
+    }
+    totalDays.innerHTML = daysCompleted + "/" + daysInThisMonth;
+}
+
+console.log("completed array: " + completed);
+console.log("total days completed: " + daysCompleted);
+
+for (let i = 0; i < currentDate; i++) {
+    let tempString = "" + (currentMonth + 1) + "-" + (i + 1) + "-" + currentYear;
+    console.log(tempString);
+    let chosenDay = localStorage.getItem(tempString);
+    console.log(i + 1 + ": " + chosenDay);
+    let chosenDayDiv = document.getElementById("day" + (i + 1));
+    if (chosenDay === "true") {
+        chosenDayDiv.style.backgroundColor = "rgb(239, 162, 189)";
+    } else if (chosenDay === "false") {
+        chosenDayDiv.style.backgroundColor = "white";
+    }
+}
+
+let dayDivs = document.querySelectorAll(".day");
+for (let i = 0; i < currentDate; i++) {
+    dayDivs[i].onclick = function(e) {
+        let num = e.target.innerText;
+        let selectedDate = document.getElementById(e.target.id);
+        let storageString = "" + (currentMonth + 1) + "-" + num + "-" + currentYear;
+
+        if (localStorage.getItem(storageString) === "false") {
+            selectedDate.style.backgroundColor = "rgb(239, 162, 189)";
+            localStorage.setItem(storageString, true);
+            daysCompleted++;
+        } else if (localStorage.getItem(storageString) === "true") {
+            selectedDate.style.backgroundColor = "white";
+            localStorage.setItem(storageString, false);
+            daysCompleted--;
+        } 
+
+        totalDays.innerHTML = daysCompleted + "/" + dayCount;
+        console.log(daysCompleted, currentDate);
+        if (daysCompleted === currentDate) {
+            alert("Great Progress!");
+        }
+    }
+}
+
+let resetButton = document.getElementById("resetButton");
+resetButton.onclick = function() {
+    for (let i = 0; i < dayCount; i++) {
+        let tempStrings = "" + (currentMonth + 1) + "-" + (i + 1) + "-" + currentYear;
+        console.log(tempStrings);
+        localStorage.setItem(tempStrings, "false");
+        let curDay = document.getElementById("day" + (i + 1));
+        curDay.style.backgroundColor = "white";
+    }
+    daysCompleted = 0;
+    totalDays.innerHTML = daysCompleted + "/" + daysInThisMonth;
+} 
